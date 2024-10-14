@@ -10,51 +10,40 @@ import { fadeIn, textVariant } from "../utils/motion";
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-      >
-        <img
-          src={icon}
-          alt='web-development'
-          className='w-16 h-16 object-contain'
-        />
-
-        <h3 className='text-white text-[20px] font-bold text-center'>
-          {title}
-        </h3>
-      </div>
-    </motion.div>
+    variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+    className='w-full sm:w-[250px] h-[300px] relative rounded-[20px] overflow-hidden'
+  >
+    <img
+      src={icon}
+      alt={title}
+      className='w-full h-full object-cover'
+    />
+    <div className='absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-black to-transparent'>
+      <h3 className='text-white text-[20px] font-bold text-center'>
+        {title}
+      </h3>
+    </div>
+  </motion.div>
   </Tilt>
 );
 
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+      <motion.div variants={textVariant()} className="text-center">
+        <p className={styles.sectionSubText}>Our Services</p>
+        <h2 className={styles.sectionHeadText}>Influencer Marketing Excellence</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        className='mt-4 text-text-primary text-[17px] max-w-3xl leading-[30px] text-center mx-auto'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        Our Comprehensive Services
+        At Contentic Media, we are the pioneers of influencer marketing, offering unparalleled services that transcend industry standards.
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <div className='mt-20 flex flex-wrap justify-center gap-10'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
@@ -62,5 +51,4 @@ const About = () => {
     </>
   );
 };
-
-export default SectionWrapper(About, "about");
+export default SectionWrapper(About, "services");

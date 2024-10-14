@@ -26,8 +26,12 @@ const Navbar = () => {
   }, []);
 
   const handleScheduleCall = () => {
-    // Add your scheduling logic here
-    console.log("Schedule a call clicked");
+    // Open Calendly popup
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/vishwasraj345'
+      });
+    }
   };
 
   return (
@@ -60,8 +64,8 @@ const Navbar = () => {
               <li
                 key={nav.id}
                 className={`${
-                  active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer`}
+                  active === nav.title ? "text-secondary" : "text-white-100"
+                  } hover:text-secondary text-[18px] font-medium cursor-pointer`}
                 onClick={() => setActive(nav.title)}
               >
                 <a href={`#${nav.id}`}>{nav.title}</a>

@@ -1,23 +1,27 @@
 import { BrowserRouter } from "react-router-dom";
-
-import { About, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import { motion, useAnimation } from 'framer-motion'
+import { About, Feedbacks, Hero, Navbar, Tech, StarsCanvas, BrandingVideo, Footer } from "./components";
 
 const App = () => {
+  const controls = useAnimation()
   return (
     <BrowserRouter>
       <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+        <div className='bg-cover bg-no-repeat bg-center'>
+          <StarsCanvas />
           <Navbar />
           <Hero />
+          <motion.div className="app" animate={controls}>
+            <BrandingVideo/>
+          </motion.div>
         </div>
+        <div className='bg-hero-pattern'>
+          
         <About />
-        <Experience />
         <Tech />
-        <Works />
         <Feedbacks />
-        <div className='relative z-0'>
-          {/* <Contact /> */}
-          <StarsCanvas />
+        
+        <Footer/>
         </div>
       </div>
     </BrowserRouter>
