@@ -10,7 +10,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const ServiceCard = ({ index, title, icon, subServices }) => (
   <Tilt className='xs:w-[300px] w-full'>
     <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      variants={fadeIn("right", "spring", index * 0.2, 0.5)}
       className='w-full sm:w-[300px] min-h-[400px] relative rounded-[20px] overflow-hidden'
     >
       <img
@@ -46,7 +46,7 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        variants={fadeIn("", "", 0, 0.8)}
         className='mt-4 text-text-primary text-[17px] max-w-3xl leading-[30px] text-center mx-auto'
       >
         At Contentic Media, we redefine digital marketing excellence, delivering innovative solutions 

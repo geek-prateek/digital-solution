@@ -74,28 +74,12 @@ const services = [
 
 export const testimonialsData = [
   {
-    icon: Client1,
-    comment:
-      "Working with Contentic Media has been a game-changer for us. Their B2B lead generation and social media marketing strategies helped us to increase our sales every month. The video ads they produced perfectly showcased our products, leading to a significant increase in customer engagement.",
-    name: "Chief Executive Officer",
-    profession: "Deepak Textile",
-    rating: 5
-  },
-  {
     icon: Client2,
     comment:
     "Contentic Media's lead generation and digital services helped us secure over 350+ inquiries in just a month. Their innovative approach ensured we reached the right audience, driving results for our business.",
     name: "Founder & Director",
     profession: "Mithla Homes",
     rating: 4.5
-  },
-  {
-    icon: Client3,
-    comment:
-    "We trusted Contentic Media for lead generation, and they delivered beyond expectations.Their results-oriented strategies were impressive.",
-    name: "Chief Executive Officer",
-    profession: "OJPL",
-    rating: 4
   },
   {
     icon: Client4,
@@ -135,6 +119,22 @@ export const testimonialsData = [
     "Contentic Media transformed our online presence through social media management, increasing our page followers and delivering creative content and engaging the customers. Their campaigns brought both sales and visibility.",
     name: "General Manager",
     profession: "Mithai Ghar",
+    rating: 4
+  },
+  {
+    icon: Client1,
+    comment:
+      "Working with Contentic Media has been a game-changer for us. Their B2B lead generation and social media marketing strategies helped us to increase our sales every month. The video ads they produced perfectly showcased our products, leading to a significant increase in customer engagement.",
+    name: "Chief Executive Officer",
+    profession: "Deepak Textile",
+    rating: 5
+  },
+  {
+    icon: Client3,
+    comment:
+    "We trusted Contentic Media for lead generation, and they delivered beyond expectations.Their results-oriented strategies were impressive.",
+    name: "Chief Executive Officer",
+    profession: "OJPL",
     rating: 4
   },
   {
