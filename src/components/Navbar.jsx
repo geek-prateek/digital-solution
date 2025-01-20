@@ -29,7 +29,7 @@ const Navbar = () => {
     // Open Calendly popup
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/vishwasraj345'
+        url: 'https://calendly.com/contenticmedia/30min'
       });
     }
   };

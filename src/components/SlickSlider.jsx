@@ -2,6 +2,23 @@ import React from 'react';
 import Slider from "react-slick";
 import { testimonialsData } from '../constants';
 import { apos } from '../assets';
+import { FaStar, FaStarHalf } from 'react-icons/fa';
+
+const RatingStars = ({ rating }) => {
+  const stars = [];
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(<FaStar key={`star-${i}`} className="text-yellow-400" />);
+  }
+  
+  if (hasHalfStar) {
+    stars.push(<FaStarHalf key="half-star" className="text-yellow-400" />);
+  }
+
+  return <div className="flex gap-1 justify-center my-4">{stars}</div>;
+};
 
 const SlickSlider = () => {
     const settings = {
@@ -49,19 +66,24 @@ const SlickSlider = () => {
                         {/* Upper Side */}
                         <div className="c-content">
                             <img src={apos} className="apos-slider" alt="apos" width={40} height={30} />
-                            <span>{comment.comment}</span>
+                            <span className="line-clamp-5 overflow-hidden text-ellipsis">
+                                {comment.comment}
+                            </span>
                         </div>
+
+                        {/* Rating Stars */}
+                        <RatingStars rating={comment.rating} />
 
                         {/* Lower Section */}
                         <div className="c-info">
                             <div className="c-avatar">
                                 <img src={comment.icon} alt='testi'
-                                width={128}
-                                height={128} />
+                                    width={128}
+                                    height={128} />
                             </div>
                             <div className="c-person">
-                                <span>{comment.name}</span>
-                                <span>{comment.profession}</span>
+                                <span className="truncate max-w-[200px]">{comment.name}</span>
+                                <span className="truncate max-w-[200px]">{comment.profession}</span>
                             </div>
                         </div>
                     </div>

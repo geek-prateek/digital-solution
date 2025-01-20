@@ -37,7 +37,19 @@ module.exports = {
       boxShadow: {
         "3d-soft": "0 4px 6px -1px rgba(43, 45, 66, 0.1), 0 2px 4px -1px rgba(43, 45, 66, 0.06)",
       },
+      textShadow: {
+        'text-stroke': '-1px -1px 0 rgba(255,255,255,0.2), 1px -1px 0 rgba(255,255,255,0.2), -1px 1px 0 rgba(255,255,255,0.2), 1px 1px 0 rgba(255,255,255,0.2)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-stroke': {
+          textShadow: '-1px -1px 0 rgba(255,255,255,0.2), 1px -1px 0 rgba(255,255,255,0.2), -1px 1px 0 rgba(255,255,255,0.2), 1px 1px 0 rgba(255,255,255,0.2)',
+        },
+      }
+      addUtilities(newUtilities)
+    },
+  ],
 };
