@@ -6,13 +6,13 @@ import {
   Services4,
   Client1,
   Client2,
-  Client3,
   Client4,
   Client6,
   Client7,
   Client8,
   Client9,
-  Client10
+  Client10,
+  Client12
 } from "../assets";
 
 export const navLinks = [
@@ -130,7 +130,7 @@ export const testimonialsData = [
     rating: 5
   },
   {
-    icon: Client3,
+    icon: Client12,
     comment:
     "We trusted Contentic Media for lead generation, and they delivered beyond expectations.Their results-oriented strategies were impressive.",
     name: "Chief Executive Officer",
@@ -145,6 +145,22 @@ export const testimonialsData = [
     profession: "Rupam Sarees and Dresses",
     rating: 4.5
   },
+];
+
+export const partnerNames = [
+  "Mithla Homes",
+  "Satyam Properties",
+  "Archastu Construction",
+  "Agarwal's Exclusive",
+  "Dada Construction Company",
+  "House Of Arch",
+  "Shriketu Construction",
+  "ROYALSON",
+  "Rupam Sarees and Dresses",
+  "Model Cabs",
+  "Mithai Ghar",
+  "OJPL",
+  "Deepak Textile",
 ];
 
 export { services, video };

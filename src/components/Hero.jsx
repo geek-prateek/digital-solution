@@ -4,7 +4,7 @@ import Rotate3D from "./Rotate3D";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Client1, Client2, Client3, Client4, Client6, Client7, Client8, Client9, Client10 } from "../assets";
+import { Client1, Client2, Client3, Client4, Client6, Client7, Client8, Client9, Client10, Client11, Client12 } from "../assets";
 import { useState, useEffect } from "react";
 
 const handleScroll = () => {
@@ -31,7 +31,9 @@ const creatorImages = [
   Client7,
   Client8,
   Client9,
-  Client10
+  Client10,
+  Client11,
+  Client12
 ];
 
 const Hero = () => {
@@ -81,11 +83,12 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-[#1a1a2e] to-secondary opacity-50 animate-gradient-xy"></div>
       
       {/* Main content */}
-      <div className={`absolute inset-0 ${isMobile ? 'top-[20px]' : 'top-[60px] md:top-[100px]'} max-w-7xl mx-auto ${styles.paddingX} flex flex-col items-center justify-center text-center`}>
+      <div className={`absolute inset-0 ${isMobile ? 'top-0 flex items-center' : 'top-[60px] md:top-[100px]'} max-w-7xl mx-auto ${styles.paddingX} flex flex-col items-center justify-center text-center`}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className={`${isMobile ? 'mt-0' : ''}`}
         >
           <h1 className={`${styles.heroHeadText} mb-6`}>
             Transforming Ideas into <br />
@@ -102,32 +105,30 @@ const Hero = () => {
           >
             We craft innovative digital solutions that bring your vision to life
           </motion.p>
-
-          
         </motion.div>
       </div>
 
       {/* Creator Images Carousel */}
       <motion.div 
-  className="absolute bottom-20 w-full px-4 md:hidden"
-  initial={{ opacity: 0, y: 50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.9, duration: 0.8 }}
->
-  <Slider {...sliderSettings} className="max-w-6xl mx-auto">
-    {creatorImages.map((image, index) => (
-      <div key={index} className="px-2">
-        <div className="w-24 h-24 mx-auto overflow-hidden rounded-full border-2 border-secondary">
-          <img 
-            src={image} 
-            alt={`Creator ${index + 1}`} 
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    ))}
-  </Slider>
-</motion.div>
+        className="absolute bottom-20 w-full px-4 md:hidden"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.9, duration: 0.8 }}
+      >
+        <Slider {...sliderSettings} className="max-w-6xl mx-auto">
+          {creatorImages.map((image, index) => (
+            <div key={index} className="px-2">
+              <div className="w-24 h-24 mx-auto overflow-hidden rounded-full border-2 border-secondary">
+                <img 
+                  src={image} 
+                  alt={`Creator ${index + 1}`} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </motion.div>
 
       {/* Decorative elements */}
       <div className="absolute bottom-0 left-0 w-full">

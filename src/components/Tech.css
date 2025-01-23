@@ -13,10 +13,7 @@
   gap: var(--gap);
   white-space: nowrap;
   min-width: 100%;
-}
-
-.marquee-content {
-  animation: scroll 30s linear infinite;
+  animation: scroll 40s linear infinite;
 }
 
 .marquee-reverse {
@@ -26,6 +23,7 @@
 .marquee-item {
   padding: 0 1rem;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .marquee-item:hover {
@@ -44,7 +42,7 @@
 
 @media (max-width: 768px) {
   .marquee-content {
-    animation-duration: 20s;
+    animation-duration: 30s;
   }
   
   .marquee-item {

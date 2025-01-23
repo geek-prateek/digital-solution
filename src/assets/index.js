@@ -17,7 +17,9 @@ import Client6 from "./Testimonials/Frame-5.jpeg";
 import Client7 from "./Testimonials/Frame-6.jpeg";
 import Client8 from "./Testimonials/Frame-7.jpeg";
 import Client9 from "./Testimonials/Frame-8.png";
-import Client10 from "./Testimonials/Frame-9.jpeg";
+import Client10 from "./Testimonials/Frame-9.jpg";
+import Client11 from "./Testimonials/Frame-dcc.png";
+import Client12 from "./Testimonials/Frame-ojpl.jpg";
 
 import apos from "./apos.svg";
 
@@ -40,5 +42,7 @@ export {
   Client8,
   Client9,
   Client10,
+  Client11,
+  Client12,
   apos
 };
