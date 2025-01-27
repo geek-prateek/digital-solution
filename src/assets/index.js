@@ -3,6 +3,7 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import video from "./video.mp4";
+import contentic_logo from "./contentic_logo.png";
 
 import Services1 from "./howItWorks/content-creation.png";
 import Services2 from "./howItWorks/digital-marketing.png";
@@ -44,5 +45,6 @@ export {
   Client10,
   Client11,
   Client12,
-  apos
+  apos,
+  contentic_logo
 };

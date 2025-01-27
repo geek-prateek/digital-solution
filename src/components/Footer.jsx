@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { logo } from "../assets";
+import { contentic_logo } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
@@ -21,11 +21,22 @@ const Footer = () => {
               variants={fadeIn("right", "spring", 0.1, 1)}
               className="flex flex-col items-center md:items-start gap-4"
             >
-              <img src={logo} alt="Contentic Media" className="w-36 hover:scale-105 transition-transform duration-300" />
+              <img src={contentic_logo} alt="Contentic Media" className="w-36 hover:scale-105 transition-transform duration-300" />
               <p className="text-text-secondary text-sm max-w-[300px] text-center md:text-left">
                 Transforming ideas into digital reality through innovative solutions and creative excellence.
               </p>
             </motion.div>
+            <div className="flex gap-6 md:ml-auto">
+              <a href="#about" className="text-text-secondary hover:text-secondary transition-colors duration-300">
+                About
+              </a>
+              <a href="#services" className="text-text-secondary hover:text-secondary transition-colors duration-300">
+                Services
+              </a>
+              <a href="#work" className="text-text-secondary hover:text-secondary transition-colors duration-300">
+                Testimonials
+              </a>
+            </div>
           </div>
         </motion.div>
 
@@ -35,15 +46,7 @@ const Footer = () => {
         >
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <div className="flex gap-6">
-              <a href="#about" className="text-text-secondary hover:text-secondary transition-colors duration-300">
-                About
-              </a>
-              <a href="#services" className="text-text-secondary hover:text-secondary transition-colors duration-300">
-                Services
-              </a>
-              <a href="#contact" className="text-text-secondary hover:text-secondary transition-colors duration-300">
-                Contact Us
-              </a>
+              {/* Links are now handled above */}
             </div>
           </div>
         </motion.div>
