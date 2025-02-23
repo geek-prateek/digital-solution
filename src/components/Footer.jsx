@@ -4,6 +4,7 @@ import { styles } from "../styles";
 import { contentic_logo } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -46,7 +47,31 @@ const Footer = () => {
         >
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <div className="flex gap-6">
-              {/* Links are now handled above */}
+              {/* Social Media Links */}
+              <a 
+                href="https://www.facebook.com/share/1EaudpPPDD/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-text-secondary hover:text-secondary transition-colors duration-300"
+              >
+                <FaFacebook size={24} />
+              </a>
+              <a 
+                href="https://www.instagram.com/contentic.media" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-text-secondary hover:text-secondary transition-colors duration-300"
+              >
+                <FaInstagram size={24} />
+              </a>
+              <a 
+                href="https://wa.me/+7304866931" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-text-secondary hover:text-secondary transition-colors duration-300"
+              >
+                <FaWhatsapp size={24} />
+              </a>
             </div>
           </div>
         </motion.div>

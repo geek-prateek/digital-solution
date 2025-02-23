@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Slider from "react-slick";
 import { testimonialsData } from '../constants';
 import { apos } from '../assets';
@@ -21,6 +21,34 @@ const RatingStars = ({ rating }) => {
 };
 
 const SlickSlider = () => {
+    const [expandedComments, setExpandedComments] = useState({});
+    const [isTruncated, setIsTruncated] = useState({});
+    const textRefs = useRef({});
+
+    const checkTruncation = (index) => {
+        const element = textRefs.current[index];
+        if (element) {
+            const isTruncatedText = element.scrollHeight > element.clientHeight;
+            setIsTruncated(prev => ({
+                ...prev,
+                [index]: isTruncatedText
+            }));
+        }
+    };
+
+    useEffect(() => {
+        Object.keys(textRefs.current).forEach(index => {
+            checkTruncation(index);
+        });
+    }, []);
+
+    const toggleComment = (index) => {
+        setExpandedComments(prev => ({
+            ...prev,
+            [index]: !prev[index]
+        }));
+    };
+
     const settings = {
         dots: true,
         infinite: true,
@@ -63,18 +91,26 @@ const SlickSlider = () => {
             <Slider {...settings}>
                 {testimonialsData.map((comment, i) => (
                     <div key={i} className="comment">
-                        {/* Upper Side */}
                         <div className="c-content">
                             <img src={apos} className="apos-slider" alt="apos" width={40} height={30} />
-                            <span className="line-clamp-5 overflow-hidden text-ellipsis">
+                            <span 
+                                ref={el => textRefs.current[i] = el}
+                                className={`${expandedComments[i] ? '' : 'line-clamp-5'} overflow-hidden transition-all duration-300`}
+                            >
                                 {comment.comment}
                             </span>
+                            {isTruncated[i] && (
+                                <button
+                                    onClick={() => toggleComment(i)}
+                                    className="text-secondary hover:text-white transition-colors duration-300 text-sm mt-2"
+                                >
+                                    {expandedComments[i] ? 'View Less' : 'View More'}
+                                </button>
+                            )}
                         </div>
 
-                        {/* Rating Stars */}
                         <RatingStars rating={comment.rating} />
 
-                        {/* Lower Section */}
                         <div className="c-info">
                             <div className="c-avatar">
                                 <img src={comment.icon} alt='testi'
